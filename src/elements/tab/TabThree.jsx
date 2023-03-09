@@ -21,44 +21,7 @@ const TabOne = [
         bigImage: '/assets/images/portfolio/big/dp-big--portfolio-03.jpg',
         category: 'Web Design',
         title: 'Mobile App landing Design'
-    },
-    {
-        image: '04',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-04.jpg',
-        category: 'Mobile App',
-        title: 'Logo Design creativity'
-    },
-    {
-        image: '05',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-05.jpg',
-        category: 'Web Design',
-        title: 'T-shirt design is the part of design'
-    },
-    {
-        image: '06',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-06.jpg',
-        category: 'Logo Design',
-        title: 'Getting tickets to the big show'
-    },
-    {
-        image: '07',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-07.jpg',
-        category: 'Freelancer',
-        title: 'Getting tickets to the big show'
-    },
-    {
-        image: '08',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-08.jpg',
-        category: 'Logo Designer',
-        title: 'Getting tickets to the big show'
-    },
-    {
-        image: '09',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-09.jpg',
-        category: 'Logo Designer',
-        title: 'Getting tickets to the big show'
-    },
-   
+    }
 ]
 
 
