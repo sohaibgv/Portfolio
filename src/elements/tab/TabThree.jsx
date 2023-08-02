@@ -3,76 +3,47 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
+
+
 const TabOne = [
     {
         image: '01',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-01.jpg',
+        bigImage: '/assets/images/portfolio/dp-big--portfolio-01.jpg',
         category: 'Web Design',
         title: 'Design is a creative part'
     },
     {
         image: '02',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-02.jpg',
+        bigImage: '/assets/images/portfolio/dp-big--portfolio-02.jpg',
         category: 'Mobile App',
         title: 'The service provide for designer'
     },
     {
         image: '03',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-03.jpg',
+        bigImage: '/assets/images/portfolio/dp-big--portfolio-03.jpg',
         category: 'Web Design',
         title: 'Mobile App landing Design'
     }
 ]
 
-
-const TabTwo = [
+const TabTwo = [  
     {
-        image: '06',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-06.jpg',
-        category: 'Logo Design',
-        title: 'Logo design is the main part for a designer'
-    },
-    {
-        image: '07',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-07.jpg',
-        category: 'Freelancer',
-        title: 'Getting tickets to the big show'
-    },
-    {
-        image: '08',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-08.jpg',
-        category: 'App Landing',
-        title: 'Mobile App landign is a landing page design'
-    },
-    {
-        image: '09',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-09.jpg',
-        category: 'Dasboard',
-        title: 'Dasboard design is the main part for data management'
-    },
-    {
-        image: '10',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-10.jpg',
-        category: 'T-shirt Design',
-        title: 'T-shirt design is the popular design for digital market'
-    },
-    {
-        image: '11',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-11.jpg',
-        category: 'Logo Designer',
-        title: 'Getting tickets to the big show'
-    },
-]
-
-const TabThree = [
-    {
-        image: '04',
-        bigImage: '/assets/images/portfolio/big/dp-big--portfolio-04.jpg',
+        image: '01',
+        bigImage: '/assets/images/photography/1.mp4',
         category: 'Mobile App',
         title: 'Getting tickets to the big show'
     },
-    
 ]
+
+for(let i = 1; i < 30; i++){
+    TabTwo.push({
+        image: `0${i}`,
+        bigImage: `/assets/images/portfolio/photography/${i}.jpg`,
+        category: 'Photography',
+        title: ``
+    })
+}
+
 
 const TabFour = [
     {
@@ -96,7 +67,7 @@ class TabStyleThree extends Component {
     }
     render() {
         const {column } = this.props;
-        const { tab1, tab2, tab3, tab4, isOpen } = this.state;
+        const { tab1, tab3, tab4, isOpen } = this.state;
         return (
             <div>
                 <Tabs>
@@ -159,22 +130,22 @@ class TabStyleThree extends Component {
                     </TabPanel>
 
                     <TabPanel className="row row--35">
-                        {TabThree.map((value , index) => (
+                        {TabTwo.map((value , index) => (
                             <div className={`${column}`} key={index}>
                                 {isOpen && (
                                     <Lightbox
-                                        mainSrc={TabThree[tab3].bigImage}
-                                        nextSrc={TabThree[(tab3 + 1) % TabThree.length]}
-                                        prevSrc={TabThree[(tab3 + TabThree.length - 1) % TabThree.length]}
+                                        mainSrc={TabTwo[tab3].bigImage}
+                                        nextSrc={TabTwo[(tab3 + 1) % TabTwo.length]}
+                                        prevSrc={TabTwo[(tab3 + TabTwo.length - 1) % TabTwo.length]}
                                         onCloseRequest={() => this.setState({ isOpen: false })}
                                         onMovePrevRequest={() =>
                                         this.setState({
-                                            tab3: (tab3 + TabThree.length - 1) % TabThree.length,
+                                            tab3: (tab3 + TabTwo.length - 1) % TabTwo.length,
                                         })
                                         }
                                         onMoveNextRequest={() =>
                                             this.setState({
-                                                tab3: (tab3 + 1) % TabThree.length,
+                                                tab3: (tab3 + 1) % TabTwo.length,
                                             })
                                         }
                                         imageLoadErrorMessage = 'Image Loading ...'
@@ -187,7 +158,7 @@ class TabStyleThree extends Component {
                                             <div className="thumbnail-inner">
                                                 <div className="thumbnail">
                                                     <a href="#portfolio-details">
-                                                        <img src={`/assets/images/portfolio/dp-portfolio-${value.image}.jpg`} alt="Portfolio Images"/>
+                                                        <img src={`/assets/images/portfolio/photography/${value.image}.jpg`} alt="Portfolio Images"/>
                                                     </a>
                                                 </div>
                                             </div>
